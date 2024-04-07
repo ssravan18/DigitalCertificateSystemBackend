@@ -7,7 +7,12 @@ const { tokenVerification } = require("../middlewares/tokenVerificationMiddlewar
 const { onlyOrganization } = require("../middlewares/onlyOrganizationMiddleware");
 const { onlyUser } = require("../middlewares/onlyUserMiddleware");
 
-const {dashboardHandler, digiLockerHandler, certificateVerificationHandler, issueCertificateHandler} = require("../services/SessionManager.js")
+const {dashboardHandler, 
+    digiLockerHandler, 
+    certificateVerificationHandler, 
+    issueCertificateHandler,
+    downloadCertificateHandler
+} = require("../services/SessionManager.js")
 
 // Creating an instance of Express router
 const router = express.Router();
@@ -28,6 +33,8 @@ router.post("/signup", signupHandler);
 router.get("/dashboard", tokenVerification, dashboardHandler);
 
 router.post("/verify", tokenVerification, certificateVerificationHandler);
+
+router.post("/downloadcertificate", tokenVerification, downloadCertificateHandler);
 
 // * Routes Only for Users
 router.get("/digilocker", tokenVerification, onlyUser , digiLockerHandler);

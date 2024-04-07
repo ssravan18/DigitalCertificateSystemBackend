@@ -3,6 +3,13 @@ const {dashboardHandler} = require("../controllers/SessionControllers/dashboardH
 const { digiLockerHandler } = require("../controllers/SessionControllers/digiLockerHandler");
 const { certificateVerificationHandler } = require("../controllers/SessionControllers/certificateVerificationHandler");
 const { issueCertificateHandler } = require("../controllers/SessionControllers/issueCertificateHandler");
+const {downloadCertificateHandler} = require("../controllers/SessionControllers/downloadCertificateHandler");
 
 // Exporting all imported files as an object to use in the other parts of the application
-module.exports = {certificateVerificationHandler, dashboardHandler, digiLockerHandler, issueCertificateHandler}
+module.exports = {
+    certificateVerificationHandler, 
+    dashboardHandler, 
+    digiLockerHandler, 
+    issueCertificateHandler, 
+    downloadCertificateHandler
+};

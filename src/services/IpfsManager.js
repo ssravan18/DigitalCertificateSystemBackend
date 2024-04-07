@@ -26,9 +26,9 @@ async function saveData(data) {
     return result.path;
 }
 
-//Defining an asyns function to retrieve data from IPFS using CID
+//Defining an async function to retrieve data from IPFS using CID
 async function getData(hash) {
-    const ipfs = await getIpfsClient();
+    const ipfs = getIpfsClient();
     let accumalatedBuffer = []
 
     // Using ipfs.cat to retrieve data from IPFS
